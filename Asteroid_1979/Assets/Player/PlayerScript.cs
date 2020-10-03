@@ -22,13 +22,11 @@ public class PlayerScript : MonoBehaviour
         inputY = Input.GetAxis("Vertical");
         movement = new Vector3(0, inputY * speed.y, 0);
 
-
         if (Input.GetKey(KeyCode.W))
         {
             Vector3 newPos = transform.position + transform.up * speed.y;
             transform.position = newPos;
         }
-
 
         if (Input.GetKey(KeyCode.S))
         {
