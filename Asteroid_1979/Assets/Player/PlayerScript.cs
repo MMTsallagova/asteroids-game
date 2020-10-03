@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    public GameObject bullet;
+    public GameObject muzzle;
+
+    public AudioClip shootSound;
+
     public Vector2 speed = new Vector2(5,1);
     private Vector3 movement;
     private Vector2 rotation;
@@ -34,7 +39,11 @@ public class PlayerScript : MonoBehaviour
         float angle = inputX * speed.x;
         transform.Rotate(0, 0, -angle);
 
-
+        if (Input.GetMouseButtonDown(0))
+        {
+            Instantiate(bullet, muzzle.transform.position, Quaternion.identity);
+            GetComponent<AudioSource>().PlayOneShot(shootSound);
+        }
     }
 
 }
