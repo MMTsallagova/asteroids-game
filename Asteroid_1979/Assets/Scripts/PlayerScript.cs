@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -70,11 +71,11 @@ public class PlayerScript : MonoBehaviour
     public void Hit()
     {
         numberOfLives = numberOfLives-1;
-        Debug.Log(numberOfLives);
         UpdateUI();
 
         if (numberOfLives == 0)
         {
+            SceneManager.LoadScene("StartMenu");
             Destroy(gameObject);
         }
     }

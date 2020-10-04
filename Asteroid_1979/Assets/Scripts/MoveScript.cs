@@ -22,7 +22,7 @@ public class MoveScript : MonoBehaviour
     public GameObject Player;
     public PlayerScript playerScript;
 
-  
+
     public int EnemyLives = 5;
 
     private void Start()
@@ -51,6 +51,7 @@ public class MoveScript : MonoBehaviour
 
     void Update()
     {
+       
         movement = new Vector2(speed.x * direction.x, speed.y * direction.y);
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = movement;
