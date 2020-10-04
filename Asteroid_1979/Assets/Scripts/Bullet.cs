@@ -6,6 +6,8 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 4;
+    public float LiveTime = 4.0f;
+    public float Timer = 0.0f;
 
     void Start()
     {
@@ -18,6 +20,13 @@ public class Bullet : MonoBehaviour
     {
         Vector3 newPos = transform.position + transform.up * speed * Time.deltaTime;
         transform.position = newPos;
+
+        Timer += Time.deltaTime;
+        if (LiveTime<Timer)
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }
 
