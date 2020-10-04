@@ -25,7 +25,6 @@ public class SpawnEnemy : MonoBehaviour
             var prefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
             Instantiate(prefab, transform.position, Quaternion.identity);
 
-
            // Instantiate(Enemy, transform.position, Quaternion.identity);
             SpawnTime = Random.Range(4.0f, 7.0f);
             Timer = 0.0f;
